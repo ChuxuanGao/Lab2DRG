@@ -10,7 +10,6 @@
 #' @examples
 #' Medipay_stat("mean")
 
-
 Medipay_stat <- function(x){
   if(x == "mean"){
     mean <- round(mean(DRG_data$`Average Medicare Payments`), 2)
