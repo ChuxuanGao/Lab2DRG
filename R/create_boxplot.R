@@ -24,11 +24,11 @@ create_boxplot <- function(data, payment_type = "Average Medicare Payments") {
 
   data$DRG_Code <- substr(data$`DRG Definition`, 1, 3) # Extract three-digit codes
 
-  p <- ggplot(data, aes(x = .data[["DRG.Code"]], y = !!sym(payment_type))) +
+  p <- ggplot(data, aes(x = DRG.Code, y = !!sym(payment_type))) +
     geom_boxplot() +
     labs(title = paste("Boxplot of", payment_type), x = "DRG Code", y = payment_type)
 
-  p + theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 4))+
+  p + theme(axis.text.x = element_text(angle = 90, hjust = 1, size = 4))+
     scale_x_discrete(labels = function(x) ifelse(seq_along(x) %% 2 == 0, "", x))
 }
 
