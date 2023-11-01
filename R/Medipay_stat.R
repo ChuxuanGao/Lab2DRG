@@ -10,6 +10,7 @@
 #' @examples
 #' Medipay_stat("mean")
 
+
 load("data/DRG_data.rda")
 
 Medipay_stat <- function(x){
