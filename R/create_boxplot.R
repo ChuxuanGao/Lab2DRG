@@ -16,18 +16,15 @@
 
 load("data/DRG_data.rda")
 
-create_boxplot <- function(data = DRG_data,
-                           payment_type = "Average Medicare Payments") {
-  valid_payment_types <- c("Average Medicare Payments",
-                           "Average Total Payments",
-                           "Average Covered Charges")
+create_boxplot <- function(data, payment_type = "Average Medicare Payments") {
+  valid_payment_types <- c("Average Medicare Payments", "Average Total Payments", "Average Covered Charges")
   if (!payment_type %in% valid_payment_types) {
     stop("Invalid payment type. Please choose from: 'Average Medicare Payments', 'Average Total Payments', 'Average Covered Charges'")
   }
-  data$DRG_Code <- substr(data$`DRG Definition`, 1, 3)
 
-  p <- ggplot(data, aes(x = `DRG Definition`,
-                        y = !!sym(payment_type))) +
+  data$DRG_Code <- substr(data$`DRG Definition`, 1, 3) # Extract three-digit codes
+
+  p <- ggplot(data, aes(x = DRG_Code, y = !!sym(payment_type))) +
     geom_boxplot() +
     labs(title = paste("Boxplot of", payment_type), x = "DRG Code", y = payment_type)
 
