@@ -17,7 +17,7 @@ Medipay_stat <- function(x){
   }
   else if(x == "median"){
     median <- round(median(DRG_data$`Average Medicare Payments`), 2)
-    print(paste("The med?ian of average Medicare payments is", median))
+    print(paste("The median of average Medicare payments is", median))
   }
   else if(x == "standard deviation"){
     sd <- round(sd(DRG_data$`Average Medicare Payments`), 2)
