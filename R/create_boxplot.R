@@ -14,6 +14,8 @@
 #' @examples
 #' create_boxplot(DRG_data, payment_type = "Average Medicare Payments")
 
+load("data/DRG_data.rda")
+
 create_boxplot <- function(data = DRG_data,
                            payment_type = "Average Medicare Payments") {
   valid_payment_types <- c("Average Medicare Payments",
