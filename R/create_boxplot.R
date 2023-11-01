@@ -28,7 +28,7 @@ create_boxplot <- function(data, payment_type = "Average Medicare Payments") {
     geom_boxplot() +
     labs(title = paste("Boxplot of", payment_type), x = "DRG Code", y = payment_type)
 
-  p + theme(axis.text.x = element_text(angle = 90, height = 1, size = 100))+
+  p + theme(axis.text.x = element_text(angle = 90, size = 100))+
     scale_x_discrete(labels = function(x) ifelse(seq_along(x) %% 2 == 0, "", x))
 }
 
