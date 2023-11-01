@@ -33,5 +33,3 @@ create_boxplot <- function(data = DRG_data,
     scale_x_discrete(labels = function(x) ifelse(seq_along(x) %% 2 == 0, "", x))
 }
 
-
-create_boxplot(DRG_data, payment_type = "Average Medicare Payments")
