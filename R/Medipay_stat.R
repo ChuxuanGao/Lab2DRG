@@ -10,16 +10,18 @@
 #' @examples
 #' Medipay_stat("mean")
 
-
 Medipay_stat <- function(x){
   if(x == "mean"){
     mean <- round(mean(DRG_data$`Average Medicare Payments`), 2)
     print(paste("The mean of average Medicare payments is", mean))
-  } else if(x == "median"){
+  }
+  else if(x == "median"){
     median <- round(median(DRG_data$`Average Medicare Payments`), 2)
     print(paste("The median of average Medicare payments is", median))
-  } else if(x == "standard deviation"){
+  }
+  else if(x == "standard deviation"){
     sd <- round(sd(DRG_data$`Average Medicare Payments`), 2)
     print(paste("The standard deviation of average Medicare payments is", sd))
-  } else print("Invalid input, you must choose from mean, median and standard deviation ")
+  }
+  else print("Invalid input, you must choose from mean, median and standard deviation ")
 }
